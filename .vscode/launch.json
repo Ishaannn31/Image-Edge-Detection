@@ -1,0 +1,62 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Debug Main",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "${workspaceFolder}/bin/edgedetection",
+      "args": [
+        "-T",
+        "${input:threshold}",
+        "${input:image}"
+      ],
+      "stopAtEntry": true,
+      "cwd": "${workspaceFolder}",
+      "environment": [],
+      "externalConsole": false,
+      "MIMode": "gdb",
+      "setupCommands": [
+        {
+          "description": "Enable pretty-printing for gdb",
+          "text": "-enable-pretty-printing",
+          "ignoreFailures": true
+        }
+      ],
+      "preLaunchTask": "make"
+    },
+    {
+      "name": "C/C++ Runner: Debug Session",
+      "type": "cppdbg",
+      "request": "launch",
+      "args": [],
+      "stopAtEntry": false,
+      "externalConsole": true,
+      "cwd": "c:/Users/ijadh/Desktop/project-2-7046247/src",
+      "program": "c:/Users/ijadh/Desktop/project-2-7046247/src/build/Debug/outDebug",
+      "MIMode": "gdb",
+      "miDebuggerPath": "gdb",
+      "setupCommands": [
+        {
+          "description": "Enable pretty-printing for gdb",
+          "text": "-enable-pretty-printing",
+          "ignoreFailures": true
+        }
+      ]
+    }
+  ],
+  "inputs": [
+    {
+      "id": "threshold",
+      "type": "promptString",
+      "description": "Schnellwert",
+      "default": "50"
+    },
+    {
+      "id": "image",
+      "type": "promptString",
+      "description": "Pfad zur Bilddatei (.pgm)",
+      "default": "test/data/input/img_P.pgm"
+    }
+  ]
+}
